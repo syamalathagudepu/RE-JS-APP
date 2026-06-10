@@ -1,21 +1,12 @@
-function Header() {
-  return(
-  <div>
-    <h3>Hello Syama!</h3>
-        <p>Welcome!!!!</p>
-        </div>
-  
-  )
-}
-
-
+import Header from "./components/Header";
 
 function App() {
 
   return ( 
   <>
-    <Header />
-    <Header />
+    < Header />
+    < Header />
+
     </>
     )
    
