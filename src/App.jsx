@@ -1,20 +1,25 @@
-import Header from "./components/studentCard";
+function Header() {
+  return(
+  <div>
+    <h3>Hello Syama!</h3>
+        <p>Welcome!!!!</p>
+        </div>
+  
+  )
+}
+
+
 
 function App() {
 
-  const studentName = "Arun";
-  const course = "React JS";
-  const age = 21;
-  const city = "Coimbatore";
-
-return
-    <Header
-    studentName={studentName}
-    course={course}
-    age={age}
-    city={city}/>
+  return ( 
+  <>
+    <Header />
+    <Header />
+    </>
+    )
+   
   
-
 }
 
 export default App;

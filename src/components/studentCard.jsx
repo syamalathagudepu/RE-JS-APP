@@ -1,7 +1,7 @@
-function studentcard({studentName, course, age, city}) {
+function studentCard({studentName, course, age, city}) {
  console.log(studentName, course, age, city);
 
-  return <h1>Hello { student }!</h1>
+  return <h1>Hello { studentName }!</h1>
 }
 
-export default studentcard;
+export default studentCard;
