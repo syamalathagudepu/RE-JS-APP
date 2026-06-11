@@ -36,20 +36,23 @@
 
 // export default App;
 
-import Child from "./components/Child";
+import React from "react";
 
-const App = () => {
+class App extends React.Component {
+  render() {
+    let name = "Syama";
+    let age = 29;
 
-function callback(data) {
-  // console.log("Callback applied!");
-  // console.log(data);
-}
+    return (
+      <>
+      <h1>Greetings!</h1>
+      <p>
+        Hello {name}!
+        Your age is {age }
+      </p>
+      </>
+    )
+  }
+  }
 
-  return (
-    <>
-     <Child callback={callback}/>
-     </>
-  )
-}
-
-export default App;
+  export default App;
