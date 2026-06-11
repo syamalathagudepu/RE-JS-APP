@@ -1,20 +1,20 @@
-// // import StudentCard from './components/StudentCard';
+import StudentCard from './components/StudentCard';
 
-// // function App() {
-// //   const studentName = "Arun";
-// //   const course = "React JS";
-// //   const age = 21;
-// //   const city = "Coimbatore";
+function App() {
+  const studentName = "Arun";
+  const course = "React JS";
+  const age = 21;
+  const city = "Coimbatore";
 
-// //   return <StudentCard
-// //     studentName={studentName}
-// //     course={course}
-// //     age={age}
-// //     city={ city }
-// //   />
+  return <StudentCard
+    studentName={studentName}
+    course={course}
+    age={age}
+    city={ city }
+  />
 
-// // }
-// // export default App;
+}
+export default App;
 
 
 // import { useState } from "react";
@@ -55,19 +55,3 @@
 
 // export default App;
 
-import Header from "./components/Header"
-
-function App() {
-  const loggedInUser = {
-                         name: "krish",
-                         email: "krishna@guvi.in"
-                        }
-                      
-return (
-  <>
-    <Header
-        loggedInUser={loggedInUser}/>
-   </>
-        )        }
-
-export default App;
