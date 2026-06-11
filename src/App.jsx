@@ -1,22 +1,3 @@
-import StudentCard from './components/StudentCard';
-
-function App() {
-  const studentName = "Arun";
-  const course = "React JS";
-  const age = 21;
-  const city = "Coimbatore";
-
-  return <StudentCard
-    studentName={studentName}
-    course={course}
-    age={age}
-    city={ city }
-  />
-
-}
-export default App;
-
-
 // import { useState } from "react";
 
 // const [reactions, setReactions]=useState({
@@ -55,3 +36,20 @@ export default App;
 
 // export default App;
 
+import Child from "./components/Child";
+
+const App = () => {
+
+function callback(data) {
+  // console.log("Callback applied!");
+  // console.log(data);
+}
+
+  return (
+    <>
+     <Child callback={callback}/>
+     </>
+  )
+}
+
+export default App;
