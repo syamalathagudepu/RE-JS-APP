@@ -36,23 +36,23 @@
 
 // export default App;
 
-import React from "react";
+const App = () => {
 
-import Child from "./components/Child";
+let likes = 0;
 
-class App extends React.Component {
-  render() {
-    let name = "Syama";
-    let age = 29;
+const handleLike = () =>{
+  likes++
+  console.log(likes);
+}
 
-    return (
-      <>
-      <Child
-        name={name}
-        age={age}/>
-      </>
-    )
-  }
-  }
+  return (
+    
+    <>
+     <h1>Likes : {likes}</h1>
+     <button onClick={handleLike}>Like</button>
+    
+    </>
+  )
+}
 
-  export default App;
+export default App
