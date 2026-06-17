@@ -1,22 +1,19 @@
-import {Component} from "react";
+import {useState} from 'react';
 
-export class App extends Component {
- 
-  componentDidMount () {
-    console.assertlog("component did mount");
-  }
+const App = () => {
 
- 
+const [likes , setLikes] = useState(0);
 
-  }
- 
-  render() {
-    return (
-      <>
-      <h1>Hello World!</h1>
-      </>
-    )
-  }
+const handleLike = () => {
+    setLikes(likes+1);
+}
+  return (
+   
+    <>
+    <h1>Likes: {likes}</h1>
+    <button onClick={handleLike}>Like</button>
+    </>
+  )
 }
 
 export default App;
