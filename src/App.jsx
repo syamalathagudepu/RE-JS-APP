@@ -1,4 +1,4 @@
-// import React from 'react'
+import Menulist from './components/Menulist'
 
 const App = () => {
 
@@ -8,14 +8,22 @@ const menulist = [
   'Login',
 ];
 
+const headerStyle = {color:'purple',
+              backgroundColor:'greenyellow',
+  padding: '4px',
+        textAlign: 'center'}
+
   return (
     <>
-    
-    <h1>Guvi - React</h1>
+  
+    <h1 style={headerStyle}>Guvi - React</h1>
     <ul>
       {
       menulist.map((value, index)=>{
-        return <li key= {index}><a href="#">{value}</a></li> 
+        return <Menulist
+        key= {index}
+        value= {value}
+        /> 
       })
     }
     </ul>
