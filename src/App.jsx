@@ -1,35 +1,25 @@
-import Menulist from './components/Menulist'
+import { useEffect,useState } from "react";
 
 const App = () => {
 
-const menulist = [
-  'Home',
-  'Register',
-  'Login',
-];
+  const [likes,setLikes] = useState(0);
 
-const headerStyle = {color:'purple',
-              backgroundColor:'greenyellow',
-  padding: '4px',
-        textAlign: 'center'}
+
+useEffect(() => {
+console.log("component is mounted/updated");
+});
+
+const handleLike = () => {
+    setLikes(likes+1);
+}
 
   return (
+    
     <>
-  
-    <h1 style={headerStyle}>Guvi - React</h1>
-    <ul>
-      {
-      menulist.map((value, index)=>{
-        return <Menulist
-        key= {index}
-        value= {value}
-        /> 
-      })
-    }
-    </ul>
-    
+    <h1>Likes : {likes}</h1>
+    <button onClick={handleLike}>Like</button>
     </>
-    
+
   )
 }
 
