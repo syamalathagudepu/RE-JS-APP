@@ -1,41 +1,57 @@
-import {useReducer} from 'react'
+import React, { useState } from "react";
+import Todo from "./project1/Todo";
+import Inprogress from "./project1/Inprogress";
+import Done from "./project1/Done";
+import Newtask from "./project1/Newtask";
 
-const App = () => {
+function App() {
+  const [tasks, setTasks] = useState({
+    todo: ["Design Login Page"],
+    inProgress: ["API Integration"],
+    done: ["Setup Project Structure"],
+  });
 
-const reducer = (state, action) => {
-   
-  if (action.type === "LIKE") {
-      return state + 1;
-} else if (action.type == "DISLIKE") {
-  return state - 1;
-} else if (action.type == "RESET") {
-  return 0;
-}
+  const [newTask, setNewTask] = useState("");
 
-return state;
-}
-
-  let [likes, setLikes] = useReducer(reducer , 0);
-  
-  const handleLike = () => {
-        setLikes({type : "LIKE"});
-  }
-  const handleDislike = () => {
-        setLikes({type : "DISLIKE"});
-  }
-
-  const handleReset = () => {
-    setLikes ({type : "RESET"});
-  }
+  // Function to add a new task to "To Do"
+  const addTask = () => {
+    if (newTask.trim() === "") return;
+    setTasks({
+      ...tasks,
+      todo: [...tasks.todo, newTask],
+    });
+    setNewTask("");
+  };
 
   return (
-    <div>
-      <h1>Likes:{likes}</h1>
-      <button onClick={handleLike}>Like</button> &nbsp;
-      <button onClick={handleDislike}>Dislike</button> &nbsp;
-      <button onClick={handleReset}>Reset</button>
-       </div>
-  )
+    <div className="p-6">
+      <h1 className="text-2xl font-bold mb-6 text-center">Kanban Board Tasks</h1>
+
+        {/* NewTask */}
+        <Newtask
+         newTask={newTask} 
+        setNewTask={setNewTask} 
+        addTask={addTask}/>
+
+
+       {/* Kanban Columns */}
+
+      <div className="grid md:grid-cols-3 gap-6">
+         {/*To Do  */}
+      
+    
+       <Todo tasks={tasks}/>
+
+        {/* In Progress  */}
+        <Inprogress tasks={tasks}/>
+
+        {/* Done  */}
+        <Done tasks={tasks}/>
+         
+           
+      </div>
+    </div>
+  );
 }
 
 export default App;
