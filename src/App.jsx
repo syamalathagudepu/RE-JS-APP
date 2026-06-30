@@ -1,15 +1,9 @@
-import { useState } from "react";
-
 const App = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
   const handleLogin = (e) => {
     e.preventDefault();
     
     console.log('logging in with...');
-    // console.log(e.target.email.value, e.target.password.value);
-    console.log(email, password);
+    console.log(e.target.email.value, e.target.password.value);
   }
 
   return (
@@ -20,16 +14,12 @@ const App = () => {
           type="email"
           placeholder="Email..."
           name="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
         />  
         &nbsp;
         <input
           type="password"
           placeholder="Password..."
           name="password"
-          value={password}
-          onChange={e => setPassword(e.target.value)}
         />
         &nbsp;
         <button
